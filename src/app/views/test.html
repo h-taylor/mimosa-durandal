@@ -11,7 +11,7 @@
       </div>
 
      <!--  <p class="alert alert-danger output" data-bind="css: { 'alert-success': outputClass == true }"> -->
-      <p data-bind="css: isValidInput() == true ? 'alert alert-success output' : 'alert alert-danger output'">
+       <p class="output alert" data-bind="css: { 'alert-success': isValidInput(), 'alert-danger': !isValidInput() } ">
         Output: <strong data-bind="text: numOutput"></strong>
       </p>
     </div>

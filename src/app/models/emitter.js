@@ -10,9 +10,7 @@ define(['knockout'], function(ko) {
       var isModEqualToZero = false;
 
       if (input % this.modulus() === 0) {
-
         isModEqualToZero = true;
-
       }
 
       return isModEqualToZero;

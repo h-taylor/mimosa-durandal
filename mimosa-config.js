@@ -24,9 +24,8 @@ exports.config = {
     copy: {
       mainOverrides: {
         "bootstrap": [
-          "docs/assets/js/bootstrap.js",
-          "docs/assets/css/bootstrap.css",
-          "docs/assets/css/bootstrap-responsive.css"
+          "dist/js/bootstrap.js",
+          "dist/css/bootstrap.css"
         ],
         "durandal": [
           {
@@ -38,7 +37,8 @@ exports.config = {
          "jasmine": [
           "lib/jasmine-core"
         ]
-      }
+      },
+      unknownMainFullCopy: true
     }
   }
 }

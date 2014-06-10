@@ -3,8 +3,10 @@
       <h2>Set Up</h2>
       <select class="col-sm-2" id="selectSetup" data-bind="options: emitters, optionsText: 'name', value: selectedEmitter" multiple="true">
       </select>
-      <button class="col-sm-4 nbtn" data-bind="click: newEmitter">New</button>
-      <button class="col-sm-4 nbtn" data-bind="click: removeEmitter">Remove</button>
+      <div class="col-sm-4">
+        <button class="col-sm-12 nbtn" data-bind="click: newEmitter">New</button>
+        <button class="col-sm-12 nbtn" data-bind="click: removeEmitter">Remove</button>
+      </div>
     </div>
 
     <form class="row form-horizontal" data-bind="if: selectedEmitter()">

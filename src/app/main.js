@@ -1,9 +1,9 @@
 ﻿requirejs.config({
     paths: {
         'text': 'vendor/requirejs-text/text',
-        'durandal':'vendor/durandal/js',
-        'plugins' : 'vendor/durandal/js/plugins',
-        'transitions' : 'vendor/durandal/js/transitions',
+        'durandal':'vendor/durandal/',
+        'plugins' : 'vendor/durandal/plugins',
+        'transitions' : 'vendor/durandal/transitions',
         'knockout': 'vendor/knockout.js/knockout',
         'bootstrap': 'vendor/bootstrap/bootstrap',
         'jquery': 'vendor/jquery/jquery'
