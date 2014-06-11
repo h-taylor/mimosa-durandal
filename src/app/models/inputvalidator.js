@@ -19,25 +19,8 @@ define(['emitter_config','jquery','models/utilities'], function (emitterConfig, 
 			}
 		});
 
-		if(!outputHasBeenAssigned) {
-			finalOutput = input;
-		}
-
-		if(isNaN(input)) {
-			finalOutput = "Not Valid Data";
-		}
-		else if(utility.isEqualToZero(input)) {
-			finalOutput = "0";
-		}
-		else if(utility.isLengthLessThanOne(input)) {
-			finalOutput = "" + input;
-		}
-		else if(utility.isEqualToASpace(input)) {
-			finalOutput = "Not Valid Data";
-		}
-
+		if(!outputHasBeenAssigned) finalOutput = input;
 		return finalOutput;
-
 	};
 
   };

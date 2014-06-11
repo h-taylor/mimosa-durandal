@@ -4,6 +4,7 @@ define(['emitter_config','jquery','models/utilities'], function (emitterConfig, 
 
     var self = this;
     var utility = new Utilities();
+    self.inputData = input;
     self.valid = true;
     self.problems = [];
 
