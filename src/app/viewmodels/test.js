@@ -1,8 +1,8 @@
-define(['durandal/app', 'knockout','jquery','models/input_validator','models/subject'], function (app, ko, $, InputValidator,Subject) {
+define(['durandal/app', 'knockout','jquery','models/outputer','models/input_validator'], function (app, ko, $, Outputer,InputValidator) {
 
   function Test() {
     var self = this;
-    var inputValidator = new InputValidator();
+    var outputer = new Outputer();
 
     self.numInput = ko.observable();
     self.outputClass = ko.observable();
@@ -14,12 +14,12 @@ define(['durandal/app', 'knockout','jquery','models/input_validator','models/sub
     };
 
     self.numOutput = ko.computed(function() {
-        var subject = new Subject(self.numInput());
+        var inputValidator = new InputValidator(self.numInput());
         var finalOutput;
-        subject.checkInput();
-        self.isValid = subject.valid;
-        if (subject.valid) finalOutput = inputValidator.inputCheck(self.numInput());
-        if (!subject.valid) finalOutput = "Not Valid Data";
+        inputValidator.checkInput();
+        self.isValid = inputValidator.valid;
+        if (inputValidator.valid) finalOutput = outputer.inputCheck(self.numInput());
+        if (!inputValidator.valid) finalOutput = "Not Valid Data";
         return finalOutput;
 	}, this);
 

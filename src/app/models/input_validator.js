@@ -1,29 +1,31 @@
-define(['emitter_config','jquery','models/utilities'], function (emitterConfig, $, Utilities) {
+define(['models/utilities'], function (Utilities) {
+    var InputValidator = function(input) {
 
-  var InputValidator = function() {
+        var self = this;
+        var utility = new Utilities();
 
-	var self = this;
-	self.emitters = emitterConfig.emitters;
+        self.inputData = input;
+        self.valid = true;
+        self.problems = [];
 
-	self.inputCheck = function(input) {
-		var utility = new Utilities();
-		var finalOutput = "";
-		var outputHasBeenAssigned = false;
-		input = utility.trimWhiteSpaceFromString(input);
+        self.registerProblem = function(problem) {
+            self.problems.push(problem);
+            self.valid = false;
+        };
 
-		$.each(self.emitters(), function(index, value) {
-			if(value.isInputModEqualToZero(input)) {
-				finalOutput += value.output();
-				outputHasBeenAssigned = true;
-			}
-		});
+        self.getProblems = function() {
+            var problemList = self.problems.join('; ');
+            return problemList;
+        };
 
-		if(!outputHasBeenAssigned) finalOutput = input;
-		return finalOutput;
-	};
-
-  };
-
+        self.checkInput = function() {
+            var input = utility.trimWhiteSpaceFromString(self.inputData);
+            if (input === undefined) input = 1, self.valid = false;
+            if (isNaN(input)) self.registerProblem("Input is not a number");
+            if (utility.isEqualToZero(input)) self.registerProblem("Input is equal to zero");
+            if (utility.isLengthLessThanOne(input)) self.registerProblem("Input length is less than one");
+            if (utility.isEqualToASpace(input)) self.registerProblem("Input had a space");
+        };
+    };
   return InputValidator;
 });
-
