@@ -23,7 +23,7 @@ requirejs.config({
 });
 
 require(['boot'], function() {
-  require(['../spec/utilities','../spec/emitter','../spec/inputvalidator'], function() {
+  require(['../spec/utilities','../spec/emitter','../spec/input_validator'], function() {
     window.onload();
   });
 });

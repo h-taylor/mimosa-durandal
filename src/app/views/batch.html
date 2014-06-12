@@ -1,20 +1,15 @@
 <section class="container">
 	<div class="row">
-		<input type="range"  min="0" max="400" data-bind="value: rangeValue"/>
+		<!-- <input type="range" min="1" max="400" data-bind="value: rangeValue" name="Input number range" value="0"/> -->
+		<input type="range" data-bind="value: rangeValue" name="Input number range" value="1"  max="400" min="1"/>
 	</div>
 	<div class="row">
-		<div class="col-sm-4">
-		</div>
-		<div class="col-sm-4 middle">
-			<ol data-bind="foreach: finalOutput" class="list-group">
-				<li class="list-group-item">
-					<p>
-						<b data-bind="text: $data"></b>
-					</p>
-				</li>
-			</ol>
-		</div>
-		<div class="col-sm-4">
-		</div>
+		<ol data-bind="foreach: finalOutput" class="list-group">
+			<li>
+				<p>
+					<b data-bind="text: $data"></b>
+				</p>
+			</li>
+		</ol>
 	</div>
 </section>

@@ -2,7 +2,6 @@ define([], function() {
 	var Utilities = function() {
 
 		this.isEqualToZero = function(val) {
-
 			var isValZero = false;
 
 			if(parseInt(val) === 0) {
@@ -12,7 +11,6 @@ define([], function() {
 		};
 
 		this.isLengthLessThanOne = function(val) {
-
 			var isValLengthLessThanOne = false;
 
 			if(val.length < 1) {
@@ -23,7 +21,6 @@ define([], function() {
 		};
 
 		this.isEqualToASpace = function(val) {
-
 			var isValEqualToASpace = false;
 
 			if(val === " ") {
@@ -34,9 +31,7 @@ define([], function() {
 		};
 
 		this.trimWhiteSpaceFromString = function(val) {
-
 			return String(val).replace(/^\s\s*/, ' ').replace(/\s\s*$/, ' ');
-
 		};
 	};
 	return Utilities;

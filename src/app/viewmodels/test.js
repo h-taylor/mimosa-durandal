@@ -1,8 +1,9 @@
-define(['durandal/app', 'knockout','jquery','models/inputvalidator','models/subject'], function (app, ko, $, InputValidator,Subject) {
+define(['durandal/app', 'knockout','jquery','models/input_validator','models/subject'], function (app, ko, $, InputValidator,Subject) {
 
   function Test() {
     var self = this;
     var inputValidator = new InputValidator();
+
     self.numInput = ko.observable();
     self.outputClass = ko.observable();
     self.isValid = false;

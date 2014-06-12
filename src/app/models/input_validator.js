@@ -1,24 +1,29 @@
 define(['emitter_config','jquery','models/utilities'], function (emitterConfig, $, Utilities) {
 
-  var InputValidator = function(input) {
+  var InputValidator = function() {
 
-    var self = this;
-    var utility = new Utilities();
-    self.inputData = input;
-    self.valid = true;
-    self.problems = [];
+	var self = this;
+	self.emitters = emitterConfig.emitters;
 
-    self.registerProblem = function(problem) {
-      self.problems.push(problem);
-      self.valid = false;
-    };
+	self.inputCheck = function(input) {
+		var utility = new Utilities();
+		var finalOutput = "";
+		var outputHasBeenAssigned = false;
+		input = utility.trimWhiteSpaceFromString(input);
 
-    // Evaluation code at the bottom of the class...
-    if (isNaN(input)) self.registerProblem("Input is not a number.");
-    // if (utility.isEqualToZero(input)) self.registerProblem("Input is is equal to zero");
-    // if (utility.isLengthLessThanOne(input)) self.registerProblem("Input length is less than one");
-    // if (utility.isEqualToASpace(input)) self.registerProblem("Input had a space");
+		$.each(self.emitters(), function(index, value) {
+			if(value.isInputModEqualToZero(input)) {
+				finalOutput += value.output();
+				outputHasBeenAssigned = true;
+			}
+		});
+
+		if(!outputHasBeenAssigned) finalOutput = input;
+		return finalOutput;
+	};
+
   };
 
   return InputValidator;
 });
+

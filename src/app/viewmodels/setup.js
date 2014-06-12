@@ -10,14 +10,12 @@ define(['durandal/app', 'knockout', 'emitter_config', 'models/emitter'], functio
 
     this.newEmitter = function() {
       emitterConfig.newE();
-  };
+    };
 
     this.removeEmitter = function() {
-
       if (this.selectedEmitter()) {
         this.emitters.remove(this.selectedEmitter());
       }
-
     };
   };
 

@@ -1,10 +1,10 @@
-define(['jasmine', 'emitter_config','jquery','models/utilities','models/inputvalidator'], function(jasmine, EmitterConfig, $, Utilities, InputValidator) {
+define(['jasmine', 'emitter_config','jquery','models/utilities','models/input_validator'], function(jasmine, EmitterConfig, $, Utilities, InputValidator) {
     describe('InputValidator', function() {
 
         var inputValidator;
 
         beforeEach(function() {
-          utility = = new InputValidator();
+          utility = new InputValidator();
         });
 
         it("should return Fizz if matches 3", function() {
