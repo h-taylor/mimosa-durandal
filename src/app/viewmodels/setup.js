@@ -1,4 +1,4 @@
-define(['durandal/app', 'knockout', 'emitter_config', 'models/emitter'], function (app, ko, emitterConfig, Emitter) {
+define(['durandal/app', 'knockout', 'emitter_config', 'models/emitter','bootstrap'], function (app, ko, emitterConfig, Emitter, boot) {
 
   var SetUp = function() {
 
